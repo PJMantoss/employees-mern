@@ -17,7 +17,7 @@ app.use(require("./routes/record"));
 const dbo = require("./db/connection");
 
 app.listen(port, () => {
-    //perform a db connection whent server starts
+    //perform a db connection when server starts
     dbo.connectToServer(err => {
         if(err) console.err(err)
     });
