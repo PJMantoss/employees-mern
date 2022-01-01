@@ -18,5 +18,11 @@ const dbo = require("./db/connection");
 
 app.listen(port, () => {
     //perform a db connection whent server starts
-    dbo.connectToServer()
+    dbo.connectToServer(err => {
+        if(err){
+            console.err(err)
+        }
+    });
+
+    console.log(`Server is running on port: ${port}`);
 });
