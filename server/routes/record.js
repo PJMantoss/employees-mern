@@ -65,6 +65,14 @@ recordRoutes.route("update/:id").post((req, response) => {
             person_name : req.body.person_name,
             person_position : req.body.person_position,
             person_level : req.body.person_level
-        }
-    }
+        },
+    };
+
+    db_connect
+        .collection("records")
+        .updateOne(myQuery, newRecords, (err, result) => {
+            if(err) throw err;
+            console.log("1 document updated")
+            response.json(result);
+        });
 });
