@@ -37,3 +37,6 @@ recordRoutes.route("/record/:id").get((req, res) => {
             res.json(result);
         });
 });
+
+// This section creates a new record in the database
+recordRoutes.route("/record/add").post((req, response) => {});
