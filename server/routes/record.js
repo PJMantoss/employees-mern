@@ -76,3 +76,8 @@ recordRoutes.route("update/:id").post((req, response) => {
             response.json(result);
         });
 });
+
+//This section deletes a record from the database
+recordRoutes.route().delete();
+
+module.exports = recordRoutes;
