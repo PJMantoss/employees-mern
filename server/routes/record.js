@@ -24,3 +24,8 @@ recordRoutes.route("/record").get((req, res) => {
             res.json(result);
         });
 });
+
+
+recordRoutes.route("/record/:id").get((req, res) => {
+    let db_connect = dbo.getDb();
+});
