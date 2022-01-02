@@ -30,5 +30,10 @@ recordRoutes.route("/record/:id").get((req, res) => {
     let db_connect = dbo.getDb();
     let myQuery = { _id: ObjectId( req.params.id ) };
 
-    
+    db_connect
+        .collection("records")
+        .findOne(myQuery, (err, result) => {
+            if(err) throw err;
+            res.json(result);
+        });
 });
