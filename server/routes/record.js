@@ -46,4 +46,11 @@ recordRoutes.route("/record/add").post((req, response) => {
         person_position : req.body.person_position,
         person_level : req.body.person_level
     };
+
+    db_connect
+        .collection("records")
+        .insertOne(myObj, (err, result) => {
+            if(err) throw err;
+            res.json(result);
+        });
 });
