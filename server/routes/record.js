@@ -11,3 +11,8 @@ const dbo = require("../db/connection");
 
 // This helps convert the id from strings to ObjectId for the _id
 const ObjectId = require("mongodb").ObjectId;
+
+
+recordRoutes.route("/record").get((req, res) => {
+    let db_connect = dbo.getDb("employees");
+});
