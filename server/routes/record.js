@@ -54,3 +54,6 @@ recordRoutes.route("/record/add").post((req, response) => {
             response.json(result);
         });
 });
+
+// This section updates a record by id
+recordRoutes.route("update/:id").post();
