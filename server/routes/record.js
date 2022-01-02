@@ -25,7 +25,10 @@ recordRoutes.route("/record").get((req, res) => {
         });
 });
 
-
+// This section gets a single record by id
 recordRoutes.route("/record/:id").get((req, res) => {
     let db_connect = dbo.getDb();
+    let myQuery = { _id: ObjectId( req.params.id ) };
+
+    
 });
