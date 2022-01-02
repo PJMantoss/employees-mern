@@ -51,6 +51,6 @@ recordRoutes.route("/record/add").post((req, response) => {
         .collection("records")
         .insertOne(myObj, (err, result) => {
             if(err) throw err;
-            res.json(result);
+            response.json(result);
         });
 });
