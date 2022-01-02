@@ -39,4 +39,11 @@ recordRoutes.route("/record/:id").get((req, res) => {
 });
 
 // This section creates a new record in the database
-recordRoutes.route("/record/add").post((req, response) => {});
+recordRoutes.route("/record/add").post((req, response) => {
+    let db_connect = dbo.getDb();
+    let myObj = {
+        person_name : req.body.person_name,
+        person_position : req.body.person_position,
+        person_level : req.body.person_level
+    };
+});
