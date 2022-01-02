@@ -8,3 +8,6 @@ const recordRoutes = express.Router();
 
 // dbo will help us connect to the mongoDB db
 const dbo = require("../db/connection");
+
+// This helps convert the id from strings to ObjectId for the _id
+const ObjectId = require("mongodb").ObjectId;
