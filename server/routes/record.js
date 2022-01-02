@@ -78,6 +78,17 @@ recordRoutes.route("update/:id").post((req, response) => {
 });
 
 //This section deletes a record from the database
-recordRoutes.route().delete();
+recordRoutes.route("/:id").delete((req, response) => {
+    let db_connect = dbo.getDb();
+    let myQuery = { _id: ObjectId( req.params.id ) };
+
+    db_connect
+        .collection("records")
+        .deleteOne(myQuery, (err, obj) => {
+            if(err) throw err;
+            console.log("1 document deleted")
+            response.status(obj);
+        });
+});
 
 module.exports = recordRoutes;
