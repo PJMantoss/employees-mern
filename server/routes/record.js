@@ -21,5 +21,6 @@ recordRoutes.route("/record").get((req, res) => {
         .find({})
         .toArray((err, result) => {
             if(err) throw err;
+            res.json(result);
         });
 });
