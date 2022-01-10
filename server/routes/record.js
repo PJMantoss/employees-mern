@@ -15,7 +15,7 @@ const dbo = require("../db/connection");
 const ObjectId = require("mongodb").ObjectId;
 
 // This section gets a list of all the records
-recordRoutes.route("/record").get((req, res) => {
+recordRoutes.route("/record/:id").get((req, res) => {
     let db_connect = dbo.getDb("employees");
 
     db_connect
