@@ -44,9 +44,9 @@ recordRoutes.route("/record/:id").get((req, res) => {
 recordRoutes.route("/record/add").post((req, response) => {
     let db_connect = dbo.getDb();
     let myObj = {
-        person_name : req.body.person_name,
-        person_position : req.body.person_position,
-        person_level : req.body.person_level
+        name : req.body.name,
+        position : req.body.position,
+        level : req.body.level
     };
 
     db_connect
@@ -64,9 +64,9 @@ recordRoutes.route("update/:id").post((req, response) => {
 
     let newRecords = {
         $set: {
-            person_name : req.body.person_name,
-            person_position : req.body.person_position,
-            person_level : req.body.person_level
+            name : req.body.name,
+            position : req.body.position,
+            level : req.body.level
         },
     };
 
