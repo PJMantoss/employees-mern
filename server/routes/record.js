@@ -58,7 +58,7 @@ recordRoutes.route("/record/add").post((req, response) => {
 });
 
 // This section updates a record by id
-recordRoutes.route("update/:id").post((req, response) => {
+recordRoutes.route("/update/:id").post((req, response) => {
     let db_connect = dbo.getDb();
     let myQuery = { _id: ObjectId( req.params.id ) };
 
